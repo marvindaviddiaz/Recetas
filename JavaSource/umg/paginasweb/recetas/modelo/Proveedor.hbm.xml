@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 28/06/2012 03:05:38 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="umg.paginasweb.recetas.modelo.Proveedor" table="PROVEEDOR"
+		schema="RECETAS">
+		<comment>Entidad que abstrae la informacion de proveedores</comment>
+
+		<id name="id" type="java.lang.Integer">
+			<column name="ID" not-null="true">
+				<comment>Identificador del registro</comment>
+			</column>
+			<generator class="increment">
+			</generator>
+		</id>
+
+		<property name="nombre" type="java.lang.String" unique="true"
+			unique-key="PROVEEDORES_NOMBRE_UK">
+			<column name="NOMBRE" length="32" not-null="true">
+				<comment>Nombre de la marca</comment>
+			</column>
+		</property>
+
+		<property name="sitio" type="java.lang.String">
+			<column name="SITIO" length="256">
+				<comment>Sitio Web</comment>
+			</column>
+		</property>
+
+		<property name="logo" type="java.lang.String">
+			<column name="LOGO" length="256">
+				<comment>Direccion donde se encuentra la imagen</comment>
+			</column>
+		</property>
+
+		<set name="productos" table="PROVEEDOR_PRODUCTO" lazy="false"
+			schema="RECETAS">
+			<comment>Tabla que maneja la relacion entre proveedores y productos</comment>
+			<key foreign-key="PROVEEDORES_PRODUCTOS_FK_PROVEEDORES">
+				<column name="ID_PROVEEDOR">
+					<comment>Id del proveedor</comment>
+				</column>
+			</key>
+			<many-to-many foreign-key="PROVEEDORES_PRODUCTOS_FK_PRODUCTOS"
+				class="umg.paginasweb.recetas.modelo.Producto">
+				<column name="ID_PRODUCTO">
+					<comment>Id del producto</comment>
+				</column>
+			</many-to-many>
+		</set>
+
+	</class>
+</hibernate-mapping>

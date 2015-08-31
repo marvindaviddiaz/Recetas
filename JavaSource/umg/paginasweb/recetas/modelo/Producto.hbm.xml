@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 28/06/2012 03:05:38 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="umg.paginasweb.recetas.modelo.Producto" table="PRODUCTO"
+		schema="RECETAS">
+		<comment>Entidad que abstrae la informacion de Productos</comment>
+
+		<id name="id" type="java.lang.Integer">
+			<column name="ID" not-null="true">
+				<comment>Identificador del registro</comment>
+			</column>
+			<generator class="increment">
+			</generator>
+		</id>
+
+		<property name="nombre" type="java.lang.String" unique="true"
+			unique-key="PRODUCTOS_NOMBRE_UK">
+			<column name="NOMBRE" length="32" not-null="true">
+				<comment>Nombre del producto</comment>
+			</column>
+		</property>
+
+		<property name="descripcion" type="java.lang.String">
+			<column name="DESCRIPCION" length="255">
+				<comment>Decripción del producto</comment>
+			</column>
+		</property>
+
+		<many-to-one name="marca" lazy="false" foreign-key="PRODUCTOS_FK_MARCAS"
+			class="umg.paginasweb.recetas.modelo.Marca" fetch="join">
+			<column name="MARCA">
+				<comment>Marca Relacionada</comment>
+			</column>
+		</many-to-one>
+
+
+		<many-to-one name="ingredienteRelacionado" lazy="false"
+			foreign-key="PRODUCTOS_FK_INGREDIENTES" class="umg.paginasweb.recetas.modelo.Ingrediente"
+			fetch="join">
+			<column name="INGREDIENTE_RELACIONADO">
+				<comment>Ingrediente Relacionado</comment>
+			</column>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

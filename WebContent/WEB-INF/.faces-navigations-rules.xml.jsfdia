@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#Home.jsp" PATH="/Home.jsp"
+  SHAPE="240,33,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#Home.jsp:0" NAME="item" PATH="/Home.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="TipoReceta::#recetas#pages#TiposRecetaLista.jsp" NAME="output"
+    PATH="/recetas/pages/TiposRecetaLista.jsp"
+    TARGET="rules:#recetas#pages#TiposRecetaLista.jsp"
+    TITLE="TipoReceta" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="Ingrediente::#recetas#pages#IngredienteLista.jsp" NAME="output1"
+    PATH="/recetas/pages/IngredienteLista.jsp"
+    TARGET="rules:#recetas#pages#IngredienteLista.jsp"
+    TITLE="Ingrediente" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="Marca::#recetas#pages#MarcaLista.jsp"
+    NAME="output2" PATH="/recetas/pages/MarcaLista.jsp"
+    TARGET="rules:#recetas#pages#MarcaLista.jsp" TITLE="Marca" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="Proveedor::#recetas#pages#ProveedorLista.jsp" NAME="output3"
+    PATH="/recetas/pages/ProveedorLista.jsp"
+    TARGET="rules:#recetas#pages#ProveedorLista.jsp" TITLE="Proveedor" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="Producto::#recetas#pages#ProductoLista.jsp"
+    NAME="output4" PATH="/recetas/pages/ProductoLista.jsp"
+    TARGET="rules:#recetas#pages#ProductoLista.jsp" TITLE="Producto" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="Receta::#recetas#pages#RecetaLista.jsp"
+    NAME="output5" PATH="/recetas/pages/RecetaLista.jsp"
+    TARGET="rules:#recetas#pages#RecetaLista.jsp" TITLE="Receta" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:*" PATH="*" SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:0" NAME="item" PATH="*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="menuPrincipal::#Home.jsp" NAME="output"
+    PATH="/Home.jsp" TARGET="rules:#Home.jsp" TITLE="menuPrincipal" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#recetas#pages#MarcaLista.jsp"
+  PATH="/recetas/pages/MarcaLista.jsp" SHAPE="512,401,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#recetas#pages#RecetaLista.jsp"
+  PATH="/recetas/pages/RecetaLista.jsp" SHAPE="512,737,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#recetas#pages#ProveedorLista.jsp"
+  PATH="/recetas/pages/ProveedorLista.jsp" SHAPE="512,513,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#recetas#pages#TiposRecetaLista.jsp"
+  PATH="/recetas/pages/TiposRecetaLista.jsp" SHAPE="512,17,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#recetas#pages#IngredienteLista.jsp"
+  PATH="/recetas/pages/IngredienteLista.jsp" SHAPE="512,289,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#recetas#pages#ProductoLista.jsp"
+  PATH="/recetas/pages/ProductoLista.jsp" SHAPE="512,625,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#Welcome.jsp" PATH="/Welcome.jsp"
+  SHAPE="32,961,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#Welcome.jsp:0" NAME="item"
+   PATH="/Welcome.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="home::#Home.jsp" NAME="output"
+    PATH="/Home.jsp" TARGET="rules:#Home.jsp" TITLE="home" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+</PROCESS>

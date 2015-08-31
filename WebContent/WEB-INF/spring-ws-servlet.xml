@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+
+	<!-- WS -->
+
+	<bean id="payloadMapping" class="org.springframework.ws.server.endpoint.mapping.PayloadRootQNameEndpointMapping">
+		<property name="mappings">
+			<props>
+				<prop key="{http://programacionj2ee.com/ws/schemas}SumaRequest">sumaEndpoint</prop>
+			</props>
+		</property>
+		<property name="interceptors">
+			<list>
+				<ref bean="validadorInterceptor" />
+			</list>
+		</property>
+	</bean>
+
+
+	<bean id="validadorInterceptor" class="org.springframework.ws.soap.server.endpoint.interceptor.PayloadValidatingInterceptor">
+		<property name="schema" value="/WEB-INF/ws.xsd" />
+		<property name="validateRequest" value="true" />
+		<property name="validateResponse" value="true" />
+	</bean>
+
+	<bean id="messageFactory" class="org.springframework.ws.soap.saaj.SaajSoapMessageFactory">
+
+	</bean>
+
+	<bean id="suma" class="org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition">
+		<property name="schema" ref="sumaSchema" />
+		<property name="portTypeName" value="SumaRequest" />
+		<property name="locationUri" value="/services/sumaService" />
+		<property name="targetNamespace" value="http://programacionj2ee.com/ws/schemas" />
+	</bean>
+
+	<bean id="sumaSchema" class="org.springframework.xml.xsd.SimpleXsdSchema">
+		<property name="xsd" value="/WEB-INF/ws.xsd" />
+	</bean>
+
+	<bean id="sumaEndpoint" class="umg.paginasweb.recetas.ws.RecetasWSEndPoint">
+		<constructor-arg ref="castorMarshaller" />
+	</bean>
+
+	<bean id="castorMarshaller" class="org.springframework.oxm.castor.CastorMarshaller">
+		<property name="mappingLocation" value="classpath:castor.xml" />
+	</bean>
+</beans>

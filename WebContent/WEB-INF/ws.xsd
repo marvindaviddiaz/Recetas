@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified"
+    targetNamespace="http://programacionj2ee.com/ws/schemas"
+    xmlns:ws="http://programacionj2ee.com/ws/schemas">
+
+    <xs:element name="SumaRequest">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="sumando1" type="xs:int" />
+                <xs:element name="sumando2" type="xs:int"/>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="SumaResponse">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="resultado" type="xs:int" />
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

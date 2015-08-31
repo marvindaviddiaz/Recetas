@@ -1,0 +1,233 @@
+@CHARSET "UTF-8";
+
+.busqueda {
+	margin-top: 100px !important;
+	margin-bottom: 50px !important;
+	width: 500px !important;
+	font: italic !important;
+	font-size: xx-large !important;
+	height: 50px !important;
+}
+
+.fondo {
+	background-image: url("images/fondo.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	-webkit-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	background-size: 100% 100%;
+	min-width: 1024px;
+	border: 0px;
+	top: 0;
+	left: 0;
+	z-index: -50;
+	height: 100%;
+}
+
+.fondoListado {
+	background-image: url("images/fondoListado.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	-webkit-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	background-size: 100% 100%;
+	border: 0px;
+	top: 0;
+	left: 0;
+	z-index: -50;
+	height: 100%;
+}
+
+.fondoForm {
+	background-color: white;
+	background: rgba(255, 255, 255, 0.5);
+	height: 100%;
+	width: 100%;
+}
+
+.panelRecetas {
+	margin-left: 0px;
+	margin-right: 0px;
+	margin: 0px auto;
+}
+
+.centrar {
+	margin-left: 0px;
+	margin-right: 0px;
+	margin: 0px auto;
+}
+
+.box {
+	background-color: #FFF;
+	height: 100px;
+	width: 100px;
+	text-align: center;
+}
+
+.cell {
+	height: 120px;
+	width: 220px;
+	vertical-align: top;
+}
+
+.imagen {
+	width: 100px;
+	height: 100px;
+	opacity: 0.7;
+	filter: alpha(opacity =                                     70);
+}
+
+.imagen:hover {
+	opacity: 1.0;
+	filter: alpha(opacity =                                     100);
+}
+
+.tituloPagina {
+	font-size: 20px;
+	font-weight: bold;
+	color: black;
+	font-family: Arial;
+	text-align: center !important;
+	width: 100px;
+	margin: auto;
+}
+
+.subTituloPagina {
+	font-size: 14px;
+	font-weight: bold;
+	color: #000000;
+	font-style: italic;
+	font-family: Arial;
+	text-align: center;
+}
+
+.separadorTitulo {
+	color: #1e63a4;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #8EB1D1;
+	text-align: left;
+	width: 100%;
+}
+
+div#screen {
+	width: 600px;
+	height: 550px;
+	overflow: auto;
+}
+
+a:link {
+	font-weight: bold;
+	text-decoration: none;
+	color: #4E4D4D;
+}
+
+a:visited {
+	font-weight: bold;
+	text-decoration: none;
+	color: #4E4D4D;
+}
+
+a:hover,a:active {
+	text-decoration: underline;
+	color: black;
+}
+
+.listadoDatosDetalle1 {
+	font-family: Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #1865AD;
+	line-height: 10px;
+	background-color: #FFFFFF;
+}
+
+.listadoDatosDetalle2 {
+	font-family: Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #1865AD;
+	background-color: #EFEFEF;
+	line-height: 10px;
+}
+
+/* ENCABEZADO DE DATA TABLES */
+.listadoDatosHeader {
+	background-image: url(../../images/structure/f_tit.jpg);
+	padding: 2px;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #184E83;
+}
+
+/* ESTILO BASICO DE DATA TABLE */
+.listadoDatosTable {
+	margin: auto;
+}
+
+.columnaIzquierda {
+	float: left;
+}
+
+.columnaDerecha {
+	float: right;
+}
+
+.columnaCentro {
+	float: none;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.otras {
+	font-size: 12px;
+	font-weight: bold;
+	color: #000000;
+	font-family: Arial;
+	text-align: left;
+	background-color: inherit;
+}
+
+.panelPrincipalLista {
+	background-color: transparent;
+	width: 100%;
+	height: 100%;
+}
+
+.menuPanel {
+	vertical-align: top;
+}
+
+.modalPanel {
+	width: 100%;
+	height: 100%;
+}
+
+.required {
+	color: darkred;
+	padding-right: 2px !important;
+}
+
+/* MENSAJE JSF DE INFORMACION INVALIDA */
+.msg_invalid {
+	background-color: transparent;
+	color: darkred;
+	font-family: Arial, Helvetica;
+	font-size: 12px;
+}
+
+.msg_error {
+	background-color: transparent;
+	color: darkred;
+	font-family: Arial, Helvetica;
+	font-size: 14px;
+}
+
+.inputForm,.textAreaForm {
+	width: 300px;
+}
+}

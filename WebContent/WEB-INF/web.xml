@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	<description>Proyecto de Paginas Web</description>
+	<display-name>Recetas</display-name>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	<context-param>
+		<param-name>javax.faces.CONFIG_FILES</param-name>
+		<param-value>
+				/WEB-INF/faces-config.xml, 
+				/WEB-INF/faces-managed-beans.xml,
+				/WEB-INF/faces-navigations-rules.xml,
+		</param-value>
+	</context-param>
+
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/webApplicationContext.xml</param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+
+	<context-param>
+		<param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+		<param-value>server</param-value>
+	</context-param>
+	<context-param>
+		<param-name>org.richfaces.SKIN</param-name>
+		<param-value>blueSky</param-value>
+	</context-param>
+	<context-param>
+		<param-name>org.richfaces.CONTROL_SKINNING</param-name>
+		<param-value>enable</param-value>
+	</context-param>
+	<filter>
+		<display-name>RichFaces Filter</display-name>
+		<filter-name>RichFaces</filter-name>
+		<filter-class>org.ajax4jsf.Filter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>RichFaces</filter-name>
+		<servlet-name>Faces Servlet</servlet-name>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>ERROR</dispatcher>
+	</filter-mapping>
+	<servlet>
+		<description>Servlet de Faces</description>
+		<display-name>Faces Servlet</display-name>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.html</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>spring-ws</servlet-name>
+		<servlet-class>org.springframework.ws.transport.http.MessageDispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>transformWsdlLocations</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>spring-ws</servlet-name>
+		<url-pattern>/services/*</url-pattern>
+	</servlet-mapping>
+
+
+</web-app>

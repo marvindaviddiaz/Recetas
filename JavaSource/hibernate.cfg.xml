@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+
+		<!--Mysql -->
+
+		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+		<property name="hibernate.connection.driver_class">org.gjt.mm.mysql.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost/RECETAS</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">root</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.connection.pool_size">100</property>
+
+		<mapping resource="umg/paginasweb/recetas/modelo/TipoReceta.hbm.xml" />
+		<mapping resource="umg/paginasweb/recetas/modelo/TipoMedida.hbm.xml" />
+		<mapping resource="umg/paginasweb/recetas/modelo/Proveedor.hbm.xml" />
+		<mapping resource="umg/paginasweb/recetas/modelo/Receta.hbm.xml" />
+		<mapping resource="umg/paginasweb/recetas/modelo/Marca.hbm.xml" />
+		<mapping resource="umg/paginasweb/recetas/modelo/Producto.hbm.xml" />
+		<mapping resource="umg/paginasweb/recetas/modelo/Ingrediente.hbm.xml" />
+		<mapping resource="umg/paginasweb/recetas/modelo/DetalleIngrediente.hbm.xml" />
+
+	</session-factory>
+</hibernate-configuration>

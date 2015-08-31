@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="umg.paginasweb.recetas.modelo.Receta" table="RECETA" schema="RECETAS">
+		<comment>Entidad que abstrae la informacion de Recetas</comment>
+
+		<id name="id" type="java.lang.Integer">
+			<column name="ID" not-null="true">
+				<comment>Identificador del registro</comment>
+			</column>
+			<generator class="increment">
+			</generator>
+		</id>
+
+		<property name="nombre" type="java.lang.String" unique="true"
+			unique-key="RECETAS_NOMBRE_UK">
+			<column name="NOMBRE" length="32" not-null="true">
+				<comment>Nombre de la marca</comment>
+			</column>
+		</property>
+
+		<property name="descripcion" type="java.lang.String">
+			<column name="DESCRIPCION" length="255">
+				<comment>Decripción del tipo de receta</comment>
+			</column>
+		</property>
+
+		<many-to-one name="tipoReceta" lazy="false"
+			foreign-key="RECETA_FK_TIPOS_RECETAS" class="umg.paginasweb.recetas.modelo.TipoReceta"
+			fetch="join">
+			<column name="TIPO_RECETA">
+				<comment>Tiopo de receta relacionada</comment>
+			</column>
+		</many-to-one>
+		
+		
+		<property name="procedimiento" type="java.lang.String">
+			<column name="PROCEDIMIENTO" length="2048" >
+				<comment>Decripción del tipo de receta</comment>
+			</column>
+		</property>
+
+	</class>
+</hibernate-mapping>

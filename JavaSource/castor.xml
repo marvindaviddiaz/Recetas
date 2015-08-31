@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE mapping PUBLIC "-//EXOLAB/Castor Mapping DTD Version 1.0//EN" "http://castor.org/mapping.dtd">
+
+<mapping>
+	<description>Serializador de objetos suma.</description>
+
+	<class name="umg.paginasweb.recetas.ws.Sumandos">
+		<map-to xml="SumaRequest" ns-uri="http://programacionj2ee.com/ws/schemas"  ns-prefix="xs" />
+		<field name="sumando1" type="integer">
+			<bind-xml name="sumando1" />
+		</field>
+		<field name="sumando2" type="integer">
+			<bind-xml name="sumando2" />
+		</field>
+	</class>
+
+	<class name="umg.paginasweb.recetas.ws.Resultado">
+		<map-to xml="SumaResponse" ns-uri="http://programacionj2ee.com/ws/schemas" ns-prefix="xs" />
+		<field name="resultado" type="integer">
+			<bind-xml name="resultado" />
+		</field>
+	</class>
+	
+	
+
+</mapping>
